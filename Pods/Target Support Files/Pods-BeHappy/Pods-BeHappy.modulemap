@@ -1,0 +1,6 @@
+framework module Pods_BeHappy {
+  umbrella header "Pods-BeHappy-umbrella.h"
+
+  export *
+  module * { export * }
+}
