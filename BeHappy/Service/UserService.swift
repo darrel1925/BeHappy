@@ -13,6 +13,7 @@ let UserService = _UserService()
 final class _UserService {
     var user: User!
     var userListener: ListenerRegistration? = nil // our database listener
+    var dg = DispatchGroup()
     
     func getCurrentUser(email: String, dispatchGroup: DispatchGroup) {
         // if user is logged in
@@ -23,26 +24,24 @@ final class _UserService {
         userListener = userRef.addSnapshotListener({ (snap, error) in
             
             if let error = error {
-                print("could not add snapShotListener :/")
+                print("could not add snapShotListener")
                 debugPrint(error.localizedDescription)
                 dispatchGroup.customLeave()
             }
             
 //          if we can get user info from db
             guard let data = snap?.data() else {
-                print("no data")
                 dispatchGroup.customLeave()
                 return
             }
             // add it to out user so we can access it globally
-//            print("Data is \(data)")
             self.user = User.init(data: data)
-//            print("user info has been updated")
             dispatchGroup.customLeave()
         })
         
         dispatchGroup.notify(queue: .main) {
             UserService.updateFirebaseWithUpdatedVars()
+            self.dg.customLeave()
         }
     }
     

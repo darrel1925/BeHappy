@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseFirestore
 
-
 class SleepController: UIViewController {
 
     @IBOutlet weak var summeryLabel: UILabel!
@@ -24,10 +23,15 @@ class SleepController: UIViewController {
         super.viewDidLoad()
 
         navigationController?.navigationBar.prefersLargeTitles = true
+        setTextFields()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setLabels()
+    }
+    
+    func setTextFields() {
+        hoursSleptField.delegate = self
     }
     
     func setLabels() {
@@ -38,17 +42,17 @@ class SleepController: UIViewController {
         var sleepThisWeek = 0
 
         for slp in UserService.user.sleep{
+            
             let dateStr = slp["date"] as! String
             let date = dateStr.toDate()
-            if date.recivedUnderOneDayAgo {
+            if date.isToday {
                 sleepToday += slp["quantity"] as! Int
             }
         }
-        
         for slp in UserService.user.sleep {
             let dateStr = slp["date"] as! String
             let date = dateStr.toDate()
-            if !date.isOverOneWeekOld {
+            if date.isDayInCurrentWeek {
                 sleepThisWeek += slp["quantity"] as! Int
             }
         }
@@ -111,6 +115,8 @@ class SleepController: UIViewController {
                 "date": Date().toString()
             ]
             
+            let dg2 = DispatchGroup()
+            dg2.enter()
             self.sleepData.append(data)
             self.db.collection("User").document(UserService.user.email).setData(["sleep": self.sleepData] , merge: true) { err in
                 if let err = err {
@@ -118,9 +124,31 @@ class SleepController: UIViewController {
                 } else {
                     print("Document successfully written!")
                 }
+                dg2.customLeave()
             }
-            self.clearTextFields()
-            self.setLabels()
+            dg2.notify(queue: .main, execute: {
+                self.clearTextFields()
+                self.setLabels()
+            })
         })
     }
 }
+
+extension SleepController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+   /**
+    * Called when the user click on the view (outside the UITextField).
+    */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
+
+
+
+

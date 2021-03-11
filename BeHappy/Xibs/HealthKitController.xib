@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HealthKitController" customModule="BeHappy" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="ypL-T1-atX" id="3Ks-eQ-C9k"/>
+                <outlet property="ageLabel" destination="bDo-oy-8zt" id="qaU-h8-0Zg"/>
+                <outlet property="backgroundView" destination="qmD-cP-uBC" id="a4U-pY-9pa"/>
+                <outlet property="bloodTypeLabel" destination="Wif-1X-xDk" id="B0F-kv-rQk"/>
+                <outlet property="bmiLabel" destination="8vg-xl-YLF" id="njB-xz-zUW"/>
+                <outlet property="containerView" destination="tMT-2U-IvK" id="F56-Nb-lyi"/>
+                <outlet property="heightLabel" destination="QFQ-sR-mof" id="ILn-7s-DZR"/>
+                <outlet property="sexLabel" destination="SDR-Zb-UnJ" id="k30-Lr-MxQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weightLabel" destination="xOz-M7-xve" id="XyD-c6-aXJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmD-cP-uBC">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMT-2U-IvK" customClass="RoundedView" customModule="BeHappy" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="346" width="414" height="550"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Kit Data" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVw-cw-zkH">
+                            <rect key="frame" x="91.5" y="16" width="161" height="30"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lrh-qf-D8f" customClass="RoundedButton" customModule="BeHappy" customModuleProvider="target">
+                            <rect key="frame" x="20" y="486" width="374" height="40"/>
+                            <color key="backgroundColor" red="0.79599106310000001" green="0.79612869019999999" blue="0.7959824204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="hDc-2V-6qS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <state key="normal" title="Dismiss">
+                                <color key="titleColor" systemColor="viewFlipsideBackgroundColor"/>
+                            </state>
+                        </button>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ypL-T1-atX">
+                            <rect key="frame" x="188.5" y="433" width="37" height="37"/>
+                        </activityIndicatorView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bLJ-T5-G1j">
+                            <rect key="frame" x="20" y="76" width="374" height="357"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="287" translatesAutoresizingMaskIntoConstraints="NO" id="TTj-yO-7Fe">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="26"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4F-Gx-W9h">
+                                            <rect key="frame" x="0.0" y="0.0" width="43.5" height="26"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDo-oy-8zt">
+                                            <rect key="frame" x="330.5" y="5" width="43.5" height="21"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="bDo-oy-8zt" secondAttribute="trailing" id="pEo-ii-iGI"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="170" translatesAutoresizingMaskIntoConstraints="NO" id="eTl-eo-76y">
+                                    <rect key="frame" x="0.0" y="66" width="374" height="26"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Blood Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxf-mw-QT7">
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="26"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wif-1X-xDk">
+                                            <rect key="frame" x="272" y="5" width="102" height="21"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Wif-1X-xDk" secondAttribute="trailing" id="ZrK-Ig-Fdw"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="115" translatesAutoresizingMaskIntoConstraints="NO" id="hXv-B0-rYY">
+                                    <rect key="frame" x="0.0" y="132.5" width="374" height="26"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biological Sex" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2Z-fw-sLf">
+                                            <rect key="frame" x="0.0" y="0.0" width="129.5" height="26"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SDR-Zb-UnJ">
+                                            <rect key="frame" x="244.5" y="0.0" width="129.5" height="26"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="SDR-Zb-UnJ" secondAttribute="trailing" id="BMU-Yt-N7I"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="121" translatesAutoresizingMaskIntoConstraints="NO" id="pmr-Wk-wo7">
+                                    <rect key="frame" x="0.0" y="198.5" width="374" height="26"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH6-xa-mXB">
+                                            <rect key="frame" x="0.0" y="0.0" width="126.5" height="26"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOz-M7-xve">
+                                            <rect key="frame" x="247.5" y="5" width="126.5" height="21"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="xOz-M7-xve" secondAttribute="trailing" id="p4q-TI-xnb"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="126" translatesAutoresizingMaskIntoConstraints="NO" id="yOi-Pw-2cV">
+                                    <rect key="frame" x="0.0" y="265" width="374" height="26"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylS-Ib-ZqX">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="26"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFQ-sR-mof">
+                                            <rect key="frame" x="250" y="5" width="124" height="21"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="QFQ-sR-mof" secondAttribute="trailing" id="wbY-fy-ZGj"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-hK-Kuy">
+                                    <rect key="frame" x="0.0" y="331" width="374" height="26"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body Mass Index" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTQ-MV-FLv">
+                                            <rect key="frame" x="0.0" y="0.0" width="166.5" height="26"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="----" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vg-xl-YLF">
+                                            <rect key="frame" x="207.5" y="5" width="166.5" height="21"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="8vg-xl-YLF" secondAttribute="trailing" id="D6V-BY-siJ"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="TTj-yO-7Fe" firstAttribute="leading" secondItem="bLJ-T5-G1j" secondAttribute="leading" id="0hu-Ej-dBe"/>
+                                <constraint firstAttribute="trailing" secondItem="pmr-Wk-wo7" secondAttribute="trailing" id="8bV-Rc-OpF"/>
+                                <constraint firstItem="pmr-Wk-wo7" firstAttribute="leading" secondItem="bLJ-T5-G1j" secondAttribute="leading" id="92B-E6-gqk"/>
+                                <constraint firstAttribute="trailing" secondItem="hXv-B0-rYY" secondAttribute="trailing" id="FDK-W7-M2I"/>
+                                <constraint firstAttribute="trailing" secondItem="TTj-yO-7Fe" secondAttribute="trailing" id="HOw-eM-wvx"/>
+                                <constraint firstItem="8x9-hK-Kuy" firstAttribute="leading" secondItem="bLJ-T5-G1j" secondAttribute="leading" id="Hdt-kZ-92H"/>
+                                <constraint firstItem="yOi-Pw-2cV" firstAttribute="leading" secondItem="bLJ-T5-G1j" secondAttribute="leading" id="He7-yC-aYa"/>
+                                <constraint firstAttribute="trailing" secondItem="yOi-Pw-2cV" secondAttribute="trailing" id="MMg-fg-FHG"/>
+                                <constraint firstItem="eTl-eo-76y" firstAttribute="leading" secondItem="bLJ-T5-G1j" secondAttribute="leading" id="SF7-32-fFe"/>
+                                <constraint firstAttribute="trailing" secondItem="eTl-eo-76y" secondAttribute="trailing" id="Wu4-iT-kxm"/>
+                                <constraint firstItem="hXv-B0-rYY" firstAttribute="leading" secondItem="bLJ-T5-G1j" secondAttribute="leading" id="iJk-lX-bl1"/>
+                                <constraint firstAttribute="trailing" secondItem="8x9-hK-Kuy" secondAttribute="trailing" id="rii-MH-LVn"/>
+                            </constraints>
+                        </stackView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lct-AN-ALt">
+                            <rect key="frame" x="277.5" y="12.5" width="45" height="42.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="ILf-3p-Nkr"/>
+                                <constraint firstAttribute="height" constant="45" id="N0l-b5-GBf"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="bLJ-T5-G1j" firstAttribute="leading" secondItem="tMT-2U-IvK" secondAttribute="leading" constant="20" id="5tL-di-lCF"/>
+                        <constraint firstAttribute="bottom" secondItem="Lrh-qf-D8f" secondAttribute="bottom" constant="24" id="78W-hj-QxE"/>
+                        <constraint firstItem="lct-AN-ALt" firstAttribute="top" secondItem="tMT-2U-IvK" secondAttribute="top" constant="11" id="Be6-Tb-yBf"/>
+                        <constraint firstItem="pVw-cw-zkH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tMT-2U-IvK" secondAttribute="leading" constant="16" id="DA0-5p-bve"/>
+                        <constraint firstItem="Lrh-qf-D8f" firstAttribute="top" secondItem="ypL-T1-atX" secondAttribute="bottom" constant="16" id="GBK-Ly-geS"/>
+                        <constraint firstAttribute="height" constant="550" id="KfD-MC-8Ul"/>
+                        <constraint firstItem="bLJ-T5-G1j" firstAttribute="top" secondItem="pVw-cw-zkH" secondAttribute="bottom" constant="30" id="KjZ-BE-6x7"/>
+                        <constraint firstItem="ypL-T1-atX" firstAttribute="centerX" secondItem="tMT-2U-IvK" secondAttribute="centerX" id="e4P-8P-C08"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pVw-cw-zkH" secondAttribute="trailing" constant="16" id="eec-Fk-ad3"/>
+                        <constraint firstItem="pVw-cw-zkH" firstAttribute="centerX" secondItem="tMT-2U-IvK" secondAttribute="centerX" constant="-35" id="eso-Pq-VpY"/>
+                        <constraint firstItem="pVw-cw-zkH" firstAttribute="top" secondItem="tMT-2U-IvK" secondAttribute="top" constant="16" id="eyt-Ha-wJD"/>
+                        <constraint firstItem="lct-AN-ALt" firstAttribute="leading" secondItem="pVw-cw-zkH" secondAttribute="trailing" constant="25" id="rlZ-hb-cnJ"/>
+                        <constraint firstItem="ypL-T1-atX" firstAttribute="top" secondItem="bLJ-T5-G1j" secondAttribute="bottom" id="rmg-sf-4u2"/>
+                        <constraint firstAttribute="trailing" secondItem="Lrh-qf-D8f" secondAttribute="trailing" constant="20" id="wZ1-x2-C3B"/>
+                        <constraint firstItem="Lrh-qf-D8f" firstAttribute="leading" secondItem="tMT-2U-IvK" secondAttribute="leading" constant="20" id="xc5-Xp-KOI"/>
+                        <constraint firstAttribute="trailing" secondItem="bLJ-T5-G1j" secondAttribute="trailing" constant="20" id="zbY-hr-cTb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="tMT-2U-IvK" secondAttribute="bottom" id="1eB-1n-Rmb"/>
+                <constraint firstItem="qmD-cP-uBC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1tP-nq-W57"/>
+                <constraint firstItem="tMT-2U-IvK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5Jm-4v-yE7"/>
+                <constraint firstAttribute="bottom" secondItem="qmD-cP-uBC" secondAttribute="bottom" id="OWl-y9-MDO"/>
+                <constraint firstItem="qmD-cP-uBC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hg9-9A-46f"/>
+                <constraint firstItem="tMT-2U-IvK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tYD-Qz-yYf"/>
+                <constraint firstItem="qmD-cP-uBC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tc1-qm-bOR"/>
+            </constraints>
+            <point key="canvasLocation" x="90" y="76"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

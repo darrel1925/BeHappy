@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1A166DAD74E7E2DA8D4B906A /* Pods_BeHappy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7DC29ACA1F3D48EDC354A2 /* Pods_BeHappy.framework */; };
 		996DFFDD25C8E45500980415 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996DFFDC25C8E45400980415 /* Extensions.swift */; };
+		997EDF4B25F9C80400CB16EA /* HappinessCalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EDF4925F9C80300CB16EA /* HappinessCalController.swift */; };
+		997EDF4C25F9C80400CB16EA /* HappinessCalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 997EDF4A25F9C80300CB16EA /* HappinessCalController.xib */; };
+		9993AF2A25E6E1B6004B0463 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993AF2925E6E1B6004B0463 /* ProfileController.swift */; };
+		9993AF2F25E6E325004B0463 /* ProfileTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993AF2E25E6E325004B0463 /* ProfileTitleCell.swift */; };
+		9993AF3425E6E334004B0463 /* ProfileSubTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993AF3325E6E334004B0463 /* ProfileSubTitleCell.swift */; };
+		9993AF3925E6E349004B0463 /* ProfilePlainSubTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9993AF3825E6E349004B0463 /* ProfilePlainSubTitleCell.swift */; };
 		99ADFB7B25DD7BCB0059030E /* CalorieHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ADFB7A25DD7BCB0059030E /* CalorieHistoryController.swift */; };
 		99ADFB8325DD7C330059030E /* CalorieHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ADFB8225DD7C330059030E /* CalorieHistoryCell.swift */; };
 		99ADFB8825DDD5EA0059030E /* SleepHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99ADFB8725DDD5EA0059030E /* SleepHistoryController.swift */; };
@@ -35,6 +41,11 @@
 		99DFB40F25C1D17800B7BD6D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB40E25C1D17800B7BD6D /* HomeController.swift */; };
 		99DFB41425C1D18900B7BD6D /* DailyLifeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB41325C1D18900B7BD6D /* DailyLifeController.swift */; };
 		99DFB41925C1D19D00B7BD6D /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB41825C1D19D00B7BD6D /* ActivityController.swift */; };
+		99FABFE725EF109A007B3ACA /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FABFE625EF109A007B3ACA /* HealthKit.framework */; };
+		99FABFED25EF36B5007B3ACA /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FABFEC25EF36B5007B3ACA /* UserHealthProfile.swift */; };
+		99FAC00925EFF2ED007B3ACA /* HealthKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FAC00725EFF2ED007B3ACA /* HealthKitController.swift */; };
+		99FAC00A25EFF2ED007B3ACA /* HealthKitController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FAC00825EFF2ED007B3ACA /* HealthKitController.xib */; };
+		99FAC01225F02734007B3ACA /* ActivityHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FAC01125F02734007B3ACA /* ActivityHistoryController.swift */; };
 		A39C52004F3A937C4E8C72E4 /* Pods_BeHappyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329036B32B98C3CCDD7AF3EA /* Pods_BeHappyTests.framework */; };
 		E52C55DD01DC8B0D4A5DE4D2 /* Pods_BeHappy_BeHappyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298AC2A0107375CFAA073DE2 /* Pods_BeHappy_BeHappyUITests.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +75,12 @@
 		5DFA0727B2A4E5B5A92443F9 /* Pods-BeHappy-BeHappyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeHappy-BeHappyUITests.release.xcconfig"; path = "Target Support Files/Pods-BeHappy-BeHappyUITests/Pods-BeHappy-BeHappyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		95D5C02D6AAF5F70CA70D67B /* Pods-BeHappy-BeHappyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeHappy-BeHappyUITests.debug.xcconfig"; path = "Target Support Files/Pods-BeHappy-BeHappyUITests/Pods-BeHappy-BeHappyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		996DFFDC25C8E45400980415 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		997EDF4925F9C80300CB16EA /* HappinessCalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappinessCalController.swift; sourceTree = "<group>"; };
+		997EDF4A25F9C80300CB16EA /* HappinessCalController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HappinessCalController.xib; sourceTree = "<group>"; };
+		9993AF2925E6E1B6004B0463 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		9993AF2E25E6E325004B0463 /* ProfileTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTitleCell.swift; sourceTree = "<group>"; };
+		9993AF3325E6E334004B0463 /* ProfileSubTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSubTitleCell.swift; sourceTree = "<group>"; };
+		9993AF3825E6E349004B0463 /* ProfilePlainSubTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePlainSubTitleCell.swift; sourceTree = "<group>"; };
 		99ADFB7A25DD7BCB0059030E /* CalorieHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieHistoryController.swift; sourceTree = "<group>"; };
 		99ADFB8225DD7C330059030E /* CalorieHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieHistoryCell.swift; sourceTree = "<group>"; };
 		99ADFB8725DDD5EA0059030E /* SleepHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHistoryController.swift; sourceTree = "<group>"; };
@@ -96,6 +113,12 @@
 		99DFB40E25C1D17800B7BD6D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		99DFB41325C1D18900B7BD6D /* DailyLifeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLifeController.swift; sourceTree = "<group>"; };
 		99DFB41825C1D19D00B7BD6D /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
+		99FABFE525EF1099007B3ACA /* BeHappy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BeHappy.entitlements; sourceTree = "<group>"; };
+		99FABFE625EF109A007B3ACA /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		99FABFEC25EF36B5007B3ACA /* UserHealthProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
+		99FAC00725EFF2ED007B3ACA /* HealthKitController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitController.swift; sourceTree = "<group>"; };
+		99FAC00825EFF2ED007B3ACA /* HealthKitController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HealthKitController.xib; sourceTree = "<group>"; };
+		99FAC01125F02734007B3ACA /* ActivityHistoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHistoryController.swift; sourceTree = "<group>"; };
 		9D3FDEC294EE36CAFD274D48 /* Pods-BeHappy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeHappy.debug.xcconfig"; path = "Target Support Files/Pods-BeHappy/Pods-BeHappy.debug.xcconfig"; sourceTree = "<group>"; };
 		E40ED35EBADC3560CD27DDC4 /* Pods-BeHappy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeHappy.release.xcconfig"; path = "Target Support Files/Pods-BeHappy/Pods-BeHappy.release.xcconfig"; sourceTree = "<group>"; };
 		EC873F7C610E0696EBB657BF /* Pods-BeHappyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeHappyTests.debug.xcconfig"; path = "Target Support Files/Pods-BeHappyTests/Pods-BeHappyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A166DAD74E7E2DA8D4B906A /* Pods_BeHappy.framework in Frameworks */,
+				99FABFE725EF109A007B3ACA /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +156,7 @@
 		79A9BC759C2B015BB857209E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99FABFE625EF109A007B3ACA /* HealthKit.framework */,
 				0C7DC29ACA1F3D48EDC354A2 /* Pods_BeHappy.framework */,
 				298AC2A0107375CFAA073DE2 /* Pods_BeHappy_BeHappyUITests.framework */,
 				329036B32B98C3CCDD7AF3EA /* Pods_BeHappyTests.framework */,
@@ -157,6 +182,7 @@
 			children = (
 				99ADFB7A25DD7BCB0059030E /* CalorieHistoryController.swift */,
 				99ADFB8725DDD5EA0059030E /* SleepHistoryController.swift */,
+				99FAC01125F02734007B3ACA /* ActivityHistoryController.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -186,8 +212,10 @@
 		99DFB31625C0B3CC00B7BD6D /* BeHappy */ = {
 			isa = PBXGroup;
 			children = (
+				99FABFE525EF1099007B3ACA /* BeHappy.entitlements */,
 				99DFB38E25C0C7B800B7BD6D /* GoogleService-Info.plist */,
 				99DFB32525C0B3CF00B7BD6D /* Info.plist */,
+				99FABFF425EFEA5F007B3ACA /* Xibs */,
 				99DFB3DF25C0D2C100B7BD6D /* Models */,
 				99DFB3E825C0D81F00B7BD6D /* Service */,
 				99DFB34C25C0B9B400B7BD6D /* Cells */,
@@ -240,6 +268,9 @@
 			isa = PBXGroup;
 			children = (
 				99ADFB8225DD7C330059030E /* CalorieHistoryCell.swift */,
+				9993AF2E25E6E325004B0463 /* ProfileTitleCell.swift */,
+				9993AF3325E6E334004B0463 /* ProfileSubTitleCell.swift */,
+				9993AF3825E6E349004B0463 /* ProfilePlainSubTitleCell.swift */,
 				99ADFB8C25DDD89A0059030E /* SleepHistoryCell.swift */,
 			);
 			path = Cells;
@@ -271,6 +302,7 @@
 		99DFB3DF25C0D2C100B7BD6D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				99FABFEC25EF36B5007B3ACA /* UserHealthProfile.swift */,
 				99DFB3E025C0D2E500B7BD6D /* User.swift */,
 			);
 			path = Models;
@@ -297,12 +329,24 @@
 			isa = PBXGroup;
 			children = (
 				99DFB40125C1D15700B7BD6D /* SleepController.swift */,
+				9993AF2925E6E1B6004B0463 /* ProfileController.swift */,
 				99DFB41825C1D19D00B7BD6D /* ActivityController.swift */,
 				99DFB40925C1D16B00B7BD6D /* CaloriesController.swift */,
 				99DFB40E25C1D17800B7BD6D /* HomeController.swift */,
 				99DFB41325C1D18900B7BD6D /* DailyLifeController.swift */,
 			);
 			path = HomePages;
+			sourceTree = "<group>";
+		};
+		99FABFF425EFEA5F007B3ACA /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				99FAC00725EFF2ED007B3ACA /* HealthKitController.swift */,
+				99FAC00825EFF2ED007B3ACA /* HealthKitController.xib */,
+				997EDF4925F9C80300CB16EA /* HappinessCalController.swift */,
+				997EDF4A25F9C80300CB16EA /* HappinessCalController.xib */,
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,8 +457,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997EDF4C25F9C80400CB16EA /* HappinessCalController.xib in Resources */,
 				99DFB32425C0B3CF00B7BD6D /* LaunchScreen.storyboard in Resources */,
 				99DFB38F25C0C7B800B7BD6D /* GoogleService-Info.plist in Resources */,
+				99FAC00A25EFF2ED007B3ACA /* HealthKitController.xib in Resources */,
 				99DFB32125C0B3CF00B7BD6D /* Assets.xcassets in Resources */,
 				99DFB31F25C0B3CC00B7BD6D /* Main.storyboard in Resources */,
 			);
@@ -545,14 +591,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DFB31825C0B3CC00B7BD6D /* AppDelegate.swift in Sources */,
+				9993AF3425E6E334004B0463 /* ProfileSubTitleCell.swift in Sources */,
+				997EDF4B25F9C80400CB16EA /* HappinessCalController.swift in Sources */,
 				99DFB35125C0BA9300B7BD6D /* SplashScreenController.swift in Sources */,
 				99ADFB8825DDD5EA0059030E /* SleepHistoryController.swift in Sources */,
 				99DFB40F25C1D17800B7BD6D /* HomeController.swift in Sources */,
 				99ADFB8325DD7C330059030E /* CalorieHistoryCell.swift in Sources */,
 				99DFB36025C0BAE500B7BD6D /* SetGoalsController.swift in Sources */,
 				99DFB41925C1D19D00B7BD6D /* ActivityController.swift in Sources */,
+				9993AF2A25E6E1B6004B0463 /* ProfileController.swift in Sources */,
+				99FAC01225F02734007B3ACA /* ActivityHistoryController.swift in Sources */,
 				99DFB3F625C0DB0D00B7BD6D /* Styles.swift in Sources */,
 				99DFB36525C0BB2100B7BD6D /* FoodPreferenceController.swift in Sources */,
+				99FAC00925EFF2ED007B3ACA /* HealthKitController.swift in Sources */,
 				99DFB40A25C1D16B00B7BD6D /* CaloriesController.swift in Sources */,
 				99DFB40225C1D15700B7BD6D /* SleepController.swift in Sources */,
 				99DFB38725C0C3A900B7BD6D /* LogInController.swift in Sources */,
@@ -560,11 +611,14 @@
 				99DFB3EA25C0D83F00B7BD6D /* UserService.swift in Sources */,
 				99DFB41425C1D18900B7BD6D /* DailyLifeController.swift in Sources */,
 				99ADFB8D25DDD89A0059030E /* SleepHistoryCell.swift in Sources */,
+				99FABFED25EF36B5007B3ACA /* UserHealthProfile.swift in Sources */,
 				99DFB35625C0BAAC00B7BD6D /* BasicInfoController.swift in Sources */,
 				99DFB31A25C0B3CC00B7BD6D /* SceneDelegate.swift in Sources */,
+				9993AF2F25E6E325004B0463 /* ProfileTitleCell.swift in Sources */,
 				996DFFDD25C8E45500980415 /* Extensions.swift in Sources */,
 				99DFB3E125C0D2E500B7BD6D /* User.swift in Sources */,
 				99DFB36A25C0BB4E00B7BD6D /* RegisterController.swift in Sources */,
+				9993AF3925E6E349004B0463 /* ProfilePlainSubTitleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,9 +795,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BeHappy/BeHappy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Y7PPXA97Y;
 				INFOPLIST_FILE = BeHappy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -761,9 +817,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BeHappy/BeHappy.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Y7PPXA97Y;
 				INFOPLIST_FILE = BeHappy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

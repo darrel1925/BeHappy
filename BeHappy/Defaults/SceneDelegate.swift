@@ -63,10 +63,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         guard let rootVC = storyboard.instantiateViewController(identifier: "tabController") as? UITabBarController else {
+            
             print("ViewController not found")
             return
         }
-        
+        rootVC.selectedIndex = 2
 //        let rootNC = UINavigationController(rootViewController: rootVC)
         self.window?.rootViewController = rootVC
         self.window?.makeKeyAndVisible()

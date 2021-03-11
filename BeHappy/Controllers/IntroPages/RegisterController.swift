@@ -107,8 +107,10 @@ class RegisterController: UIViewController {
                                  weight: self.userInfo["favoritePlace"]!,
                                  dob: self.userInfo["dob"]!,
                                  gender: self.userInfo["gender"]!,
-                                 age: self.userInfo["age"]!
-
+                                 age: self.userInfo["age"]!,
+                                 activityGoal:Int(self.userInfo["activityGoal"]!)!,
+                                 calorieGoal:Int(self.userInfo["calorieGoal"]!)!,
+                                 sleepGoal: Int(self.userInfo["sleepGoal"]!)!
                                  )
             print("here2")
             self.createFireStoreUser(user: user, fireUser: fireUser)

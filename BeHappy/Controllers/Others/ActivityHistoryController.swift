@@ -1,13 +1,13 @@
 //
-//  SleepHistoryController.swift
+//  ActivityHistoryController.swift
 //  BeHappy
 //
-//  Created by Darrel Muonekwu on 2/17/21.
+//  Created by Darrel Muonekwu on 3/3/21.
 //
 
 import UIKit
 
-class SleepHistoryController: UIViewController {
+class ActivityHistoryController: UIViewController {
 
     @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -25,7 +25,6 @@ class SleepHistoryController: UIViewController {
         animateViewDownward()
         setUpTableView()
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -97,43 +96,72 @@ class SleepHistoryController: UIViewController {
     }
 }
 
-extension SleepHistoryController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var sleep: [[String: Any]] = []
-        
+extension ActivityHistoryController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count = 0
         if self.segmentIndex == 0 {
-            for slp in UserService.user.sleep {
-                let dateStr = slp["date"] as! String
+            for activity in UserService.user.activity.reversed() {
+                let dateStr = activity["date"] as! String
                 let date = dateStr.toDate()
                 
                 if date.isToday {
-                    sleep.append(slp)
+                    count = count + 1
+                }
+            }
+            return count
+        }
+        else if self.segmentIndex == 1 {
+            for activity in UserService.user.activity.reversed() {
+                let dateStr = activity["date"] as! String
+                let date = dateStr.toDate()
+                
+                if !date.isDayInCurrentWeek {
+                    count = count + 1
+                }
+            }
+            return count
+        }
+        else {
+            return UserService.user.activity.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var activities: [[String: Any]] = []
+        
+        if self.segmentIndex == 0 {
+            for activity in UserService.user.activity.reversed() {
+                let dateStr = activity["date"] as! String
+                let date = dateStr.toDate()
+                
+                if date.isToday {
+                    activities.append(activity)
                 }
             }
         }
         else if self.segmentIndex == 1 {
-            for slp in UserService.user.sleep {
-                let dateStr = slp["date"] as! String
+            for activity in UserService.user.activity.reversed() {
+                let dateStr = activity["date"] as! String
                 let date = dateStr.toDate()
                 
                 if !date.isDayInCurrentWeek {
-                    sleep.append(slp)
+                    activities.append(activity)
                 }
             }
         }
         else {
-            sleep = UserService.user.sleep
+            activities = UserService.user.activity.reversed()
         }
         
         let row = indexPath.row
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SleepHistoryCell") as! SleepHistoryCell
-        let slp = sleep[row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalorieHistoryCell") as! CalorieHistoryCell
+        let activity = activities[row]
 
-        
         cell.selectionStyle = .none
-        cell.hoursLabel.text = "Hours: \(slp["quantity"] ?? "error")"
+        cell.nameLabel.text = activity["name"] as? String
+        cell.quantityLabel.text = "\(activity["numCalories"] ?? "error") cals"
         
-        let dateStr = slp["date"] as! String
+        let dateStr = activity["date"] as! String
         let date = dateStr.toDate()
         
         if date.isDayInCurrentWeek {
@@ -146,32 +174,4 @@ extension SleepHistoryController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 0
-        if self.segmentIndex == 0 {
-            for slp in UserService.user.sleep.reversed() {
-                let dateStr = slp["date"] as! String
-                let date = dateStr.toDate()
-                
-                if date.isToday {
-                    count = count + 1
-                }
-            }
-            return count
-        }
-        else if self.segmentIndex == 1 {
-            for slp in UserService.user.sleep.reversed() {
-                let dateStr = slp["date"] as! String
-                let date = dateStr.toDate()
-                
-                if !date.isDayInCurrentWeek {
-                    count = count + 1
-                }
-            }
-            return count
-        }
-        else {
-            return UserService.user.sleep.count
-        }
-    }
 }

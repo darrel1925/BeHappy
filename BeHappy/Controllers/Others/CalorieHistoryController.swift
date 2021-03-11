@@ -104,7 +104,7 @@ extension CalorieHistoryController: UITableViewDelegate, UITableViewDataSource {
                 let dateStr = calorie["date"] as! String
                 let date = dateStr.toDate()
                 
-                if date.recivedUnderOneDayAgo {
+                if date.isToday {
                     count = count + 1
                 }
             }
@@ -115,7 +115,7 @@ extension CalorieHistoryController: UITableViewDelegate, UITableViewDataSource {
                 let dateStr = calorie["date"] as! String
                 let date = dateStr.toDate()
                 
-                if !date.isOverOneWeekOld {
+                if date.isDayInCurrentWeek {
                     count = count + 1
                 }
             }
@@ -130,27 +130,27 @@ extension CalorieHistoryController: UITableViewDelegate, UITableViewDataSource {
         var calories: [[String: Any]] = []
         
         if self.segmentIndex == 0 {
-            for calorie in UserService.user.calories {
+            for calorie in UserService.user.calories.reversed() {
                 let dateStr = calorie["date"] as! String
                 let date = dateStr.toDate()
                 
-                if date.recivedUnderOneDayAgo {
+                if date.isToday {
                     calories.append(calorie)
                 }
             }
         }
         else if self.segmentIndex == 1 {
-            for calorie in UserService.user.calories {
+            for calorie in UserService.user.calories.reversed() {
                 let dateStr = calorie["date"] as! String
                 let date = dateStr.toDate()
                 
-                if !date.isOverOneWeekOld {
+                if date.isDayInCurrentWeek {
                     calories.append(calorie)
                 }
             }
         }
         else {
-            calories = UserService.user.calories
+            calories = UserService.user.calories.reversed()
         }
         
         let row = indexPath.row
@@ -166,7 +166,7 @@ extension CalorieHistoryController: UITableViewDelegate, UITableViewDataSource {
         let dateStr = calorie["date"] as! String
         let date = dateStr.toDate()
         
-        if date.isOverOneWeekOld {
+        if date.isDayInCurrentWeek {
             cell.dateLabel.text = date.toStringDayMonthMiunutes()
         }
         else {

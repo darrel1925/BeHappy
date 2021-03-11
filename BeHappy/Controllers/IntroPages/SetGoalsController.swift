@@ -42,9 +42,9 @@ class SetGoalsController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegisterController") as! RegisterController
         
-        userInfo.updateValue(weightField.text!, forKey: "weight")
-        userInfo.updateValue(caloriesField.text!, forKey: "caloriesPerDay")
-        userInfo.updateValue(minOfExerciseField.text!, forKey: "minutesOfExercise")
+        userInfo.updateValue(weightField.text!, forKey: "activityGoal")
+        userInfo.updateValue(caloriesField.text!, forKey: "calorieGoal")
+        userInfo.updateValue("8", forKey: "sleepGoal")
         vc.userInfo = userInfo
         
         navigationController?.pushViewController(vc, animated: true)

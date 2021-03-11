@@ -191,45 +191,22 @@ extension Date {
 //        return dateStr2
     }
     
-    var isOverOneWeekOld: Bool {
-        if let diffInDays = Calendar.current.dateComponents([.day], from: self, to: Date()).day {
-            return diffInDays > 7
-        }
-        return true
+//    var isOverOneWeekOld: Bool {
+//        if let diffInDays = Calendar.current.dateComponents([.day], from: self, to: Date()).day {
+//            return diffInDays > 7
+//        }
+//        return true
+//    }
+//
+    var isDayInCurrentWeek: Bool {
+        let currentComponents = Calendar.current.dateComponents([.weekOfYear], from: Date())
+        let dateComponents = Calendar.current.dateComponents([.weekOfYear], from: self)
+        guard let currentWeekOfYear = currentComponents.weekOfYear, let dateWeekOfYear = dateComponents.weekOfYear else { return false }
+        return currentWeekOfYear == dateWeekOfYear
     }
-    
-    var recivedUnderOneDayAgo: Bool  {
-        let inputDate = self.toString()
-        
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        if let aDate = dateFormatter.date(from: inputDate) {
-            
-            let timeInterval = aDate.timeIntervalSinceNow
-            
-            let dateComponentsFormatter = DateComponentsFormatter()
-            
-            if var dateString = dateComponentsFormatter.string(from: abs(timeInterval)) {
-                print ("Elapsed time= \(dateString)") // 4:04
-                if (!dateString.contains(":")) { // 32   <-- seconds
-                    return true
-                }
-//                else {
-//                    if (dateString.count > 4) { return false } // 12:22, 13:32, 1:23:23
-//                    
-//                }
-                dateString = dateString.replacingOccurrences(of: ":", with: ".") //  4.04
-                
-                let minutesPassed = Double(dateString) ?? 5
-                print("minutes passes: \(minutesPassed)")
-                if (minutesPassed <= 1440.0) {
-                    return true
-                }
-            }
-        }
-        return false
+
+    var isToday: Bool {
+        return Calendar.current.isDateInToday(self)
     }
 }
 extension DispatchGroup {
@@ -456,3 +433,4 @@ extension UITextField {
         }
     }
 }
+

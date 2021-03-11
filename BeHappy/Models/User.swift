@@ -27,12 +27,17 @@ class User {
     var dailyLife: [[String: Any]]
     var sleep: [[String: Any]]
     
+    var activityGoal: Int
+    var calorieGoal: Int
+    var sleepGoal: Int
+    
     
     
     // User is Signing Up
     init(id: String = "", name: String = "", email: String = "",
          height: String = "", homeAddress: String = "", workAddress: String = "",
          weight: String = "", dob: String = "", gender: String = "", age: String = "",
+         activityGoal: Int = 30, calorieGoal: Int = 2000, sleepGoal: Int = 8,
          favoritePlace: String = "", activity: [[String: Any]] = [], calories: [[String: Any]] = [],
          dailyLife: [[String: Any]] = [], sleep: [[String: Any]] = [], dailyActivity: [String:Int] = [:]) {
         
@@ -53,7 +58,10 @@ class User {
         self.calories = calories
         self.dailyLife = dailyLife
         self.sleep = sleep
-
+        
+        self.activityGoal = activityGoal
+        self.calorieGoal = calorieGoal
+        self.sleepGoal = sleepGoal
     }
     
     // User is Logging In
@@ -75,6 +83,10 @@ class User {
         self.calories = data["calories"] as? [[String: Any]] ?? []
         self.dailyLife = data["dailyLife"] as? [[String: Any]] ?? []
         self.sleep = data["sleep"] as? [[String: Any]] ?? []
+        
+        self.activityGoal = data["activityGoal"] as? Int ?? 30
+        self.calorieGoal = data["calorieGoal"] as? Int ?? 2000
+        self.sleepGoal = data["sleepGoal"] as? Int ?? 8
     }
     
     // Sending user data to Firebase
@@ -96,9 +108,12 @@ class User {
             "activity": user.activity,
             "calories": user.calories,
             "dailyLife": user.dailyLife,
-            "sleep": user.sleep
+            "sleep": user.sleep,
+            
+            "activityGoal": user.activityGoal,
+            "calorieGoal": user.calorieGoal,
+            "sleepGoal": user.sleepGoal
         ]
-        
         return data
     }
 }

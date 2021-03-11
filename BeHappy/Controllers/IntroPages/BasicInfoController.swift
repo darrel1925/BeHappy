@@ -18,9 +18,16 @@ class BasicInfoController: UIViewController {
     @IBOutlet weak var favoritePlaceField: UITextField!
     @IBOutlet weak var homeAddressField: UITextField!
     @IBOutlet weak var workAddressField: UITextField!
+    
+    var userInfo: [String: String] = [:]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        favoritePlaceField.delegate = self
+        homeAddressField.delegate = self
+        workAddressField.delegate = self
+        genderField.delegate = self
     }
     
 
@@ -50,16 +57,16 @@ class BasicInfoController: UIViewController {
             self.displayError(title: "Invalid home gender", message: message)
             return false
         }
-        else if homeAddressField.text!.isEmpty {
-            let message = "Home address field is missing!"
-            self.displayError(title: "Invalid home address", message: message)
-            return false
-        }
-        else if workAddressField.text!.isEmpty {
-            let message = "Looks like you forgot to enter a work address"
-            self.displayError(title: "Invalid work address", message: message)
-            return false
-        }
+//        else if homeAddressField.text!.isEmpty {
+//            let message = "Home address field is missing!"
+//            self.displayError(title: "Invalid home address", message: message)
+//            return false
+//        }
+//        else if workAddressField.text!.isEmpty {
+//            let message = "Looks like you forgot to enter a work address"
+//            self.displayError(title: "Invalid work address", message: message)
+//            return false
+//        }
         return true
     }
     
@@ -88,4 +95,19 @@ class BasicInfoController: UIViewController {
         presentSetGoalsController()
     }
     
+}
+
+extension BasicInfoController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+   /**
+    * Called when the user click on the view (outside the UITextField).
+    */
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
